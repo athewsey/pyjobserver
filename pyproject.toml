@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "pyjobserver"
+version = "0.0.1"
+description = "A template to micro-servicify basic Python data science code"
+authors = ["Alex Thewsey <athewsey@cantab.net>"]
+license = "Apache-2.0"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+python-dotenv = "^0.10.3"
+click = "^7.0"
+ansicolors = "^1.1"
+aiohttp = "^3.5"
+aiohttp-basicauth-middleware = "^1.1"
+pyee = "^6.0"
+marshmallow-dataclass = "^0.6.6"
+webargs = "^5.4"
+pyyaml = "^5.1"
+openpyxl = "^2.6"
+cachetools = "^3.1"
+
+[tool.poetry.dev-dependencies]
+autohooks = "^1.1"
+autohooks-plugin-black = "^1.1"
+autohooks-plugin-pylint = "^1.1"
+black = {version = "^18.3-alpha.0", allows-prereleases = true}
+commitizen = "^1.5"
+
+[tool.autohooks]
+pre-commit = ["autohooks.plugins.black", "autohooks.plugins.pylint"]
+
+[tool.black]
+line-length = 120
+target-version = ['py37']
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
